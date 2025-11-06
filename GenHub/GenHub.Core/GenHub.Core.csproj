@@ -4,6 +4,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="StyleCop.Analyzers" />
@@ -16,8 +17,11 @@
         <PackageReference Include="CsvHelper" />
         <PackageReference Include="System.Reactive" />
     </ItemGroup>
-
     <ItemGroup>
         <EmbeddedResource Include="Assets\Manifests\*.csv" />
+        <EmbeddedResource Update="Resources\Strings\*.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <CustomToolNamespace>GenHub.Core.Resources.Strings</CustomToolNamespace>
+        </EmbeddedResource>
     </ItemGroup>
 </Project>
